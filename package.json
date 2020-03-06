@@ -1,7 +1,7 @@
 {
   "name": "babel-object-to-ast",
   "description": "forked from izaakschroeder/babel-literal-to-ast",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
   "main": "index.js",
   "license": "CC0-1.0",
@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "test": "npm run lint",
-    "prepublish": "./node_modules/.bin/babel -s inline -d dist src/"
+    "prepublish": "./node_modules/.bin/babel -s inline -d dist src/ && dts-gen  --expression-file ./dist/index.js -o -f ./dist/index.d.ts"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
