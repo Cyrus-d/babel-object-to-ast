@@ -1,15 +1,16 @@
 {
   "name": "babel-object-to-ast",
   "description": "forked from izaakschroeder/babel-literal-to-ast",
-  "version": "2.1.2",
+  "version": "2.1.5",
   "author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
-  "main": "index.js",
+  "main": "dist/index",
+  "typings": "dist/index",
   "license": "CC0-1.0",
   "repository": "https://github.com/Cyrus-d/babel-object-to-ast",
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "test": "npm run lint",
-    "prepublish": "./node_modules/.bin/babel -s inline -d dist src/ && dts-gen  --expression-file ./dist/index.js -o -f ./dist/index.d.ts"
+    "build": "tsc -p tsconfig.release.json"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -19,7 +20,7 @@
     "eslint-config-metalab": "^8.0.0"
   },
   "peerDependencies": {
-    "@babel/core": "^7.1.2"
+    "@babel/core": "^7.8.4"
   },
   "dependencies": {
     "@babel/parser": "^7.8.7",
